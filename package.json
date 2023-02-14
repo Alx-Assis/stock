@@ -1,0 +1,24 @@
+{
+  "name": "stock",
+  "version": "1.0.0",
+  "description": "Crud teste para gerênciameto de estoque com nod express e SQLite",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alx-Assis/stock.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alx-Assis/stock/issues"
+  },
+  "homepage": "https://github.com/Alx-Assis/stock#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "g": "^2.0.1"
+  }
+}
