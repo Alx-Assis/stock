@@ -11,10 +11,10 @@ server.use(cors())
 server.use(express.json())
 
 server.get('/',async (request,response)=>{
-   let {Path_1,Path_2}=request.body
+  // let {Path_1,Path_2}=request.body
    read()
-   return response.json({menssage:"etiquetas geradas como sucesso - pasta output"})
-})
+   return response.send("etiquetas geradas como sucesso - pasta output"})
+)
 
 server.listen(PORT,()=>{
  console.log(`servidOr rodando  na porta ${PORT}`)
