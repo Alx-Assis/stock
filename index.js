@@ -10,7 +10,7 @@ let PORT= process.env.PORT || 3000
 server.use(cors())
 server.use(express.json())
 
-server.post('/api/v1/',async (request,response)=>{
+server.get('/api/v1/',async (request,response)=>{
    let {Path_1,Path_2}=request.body
    read()
    return response.json({menssage:"etiquetas geradas como sucesso - pasta output"})
