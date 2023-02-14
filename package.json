@@ -18,7 +18,9 @@
   },
   "homepage": "https://github.com/Alx-Assis/stock#readme",
   "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
-    "g": "^2.0.1"
+    "pdf-lib": "^1.17.1"
   }
 }
