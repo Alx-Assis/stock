@@ -1,6 +1,6 @@
 const dotenv = require("dotenv")
 const express = require("express")
-const read = require("./application")
+const read = require("./application.js")
 const cors = require( 'cors')
 
 dotenv.config()
@@ -10,11 +10,11 @@ let PORT= process.env.PORT || 3000
 server.use(cors())
 server.use(express.json())
 
-server.get('/',async (request,response)=>{
+server.post('/',async (request,response)=>{
   // let {Path_1,Path_2}=request.body
    read()
-   return response.send("etiquetas geradas como sucesso - pasta output")
-)
+  return response.json({message:"etiquetas geradas como sucesso - pasta output"})
+})
 
 server.listen(PORT,()=>{
  console.log(`servidOr rodando  na porta ${PORT}`)
