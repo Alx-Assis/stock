@@ -1,6 +1,6 @@
 const dotenv = require("dotenv")
 const express = require("express")
-const read = require("./application.js")
+const read = require("../application.js")
 const cors = require( 'cors')
 
 dotenv.config()

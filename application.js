@@ -5,13 +5,15 @@ const path = require('path')
 // import crypto from 'crypto'
 const crypto = require('crypto')
 // import fs from 'fs/promises'
-const fs = require('fs/promises')
+const fs = require('fs.promises')
 // import fs2 from 'fs'
 const fs2 = require('fs')
 
 let _docBytesRead
 
-let caminho = path.join(__dirname,'../../storage/downloads/etiqueta/')
+
+
+let caminho = path.join(__dirname,'/etiquetas/')
 async function read() {
   
 
@@ -23,7 +25,12 @@ async function read() {
 
 }
 async function createPdf(_docBytesRead) {
-  console.log(_docBytesRead,"createPdf")
+  if(_docBytesRead.length==[]){
+    console.log("não há etiqueta(as) para otimizar")
+  }else{
+    console.log(_docBytesRead,"createPdf")
+  }
+ 
   for (let i = 0; i < _docBytesRead.length; i++) {
       const docBytes = await PDFDocument.create()
 
@@ -52,9 +59,14 @@ async function createPdf(_docBytesRead) {
          height:842
        })
        //pasta destino
-        fs2.writeFileSync(`../../storage/downloads/etiqueta/output/${hash}_${_docBytesRead[i]}`,await docBytes.save())
+        fs2.writeFileSync(`./etiquetas/output/${_docBytesRead[i]}`,await docBytes.save())
+       // excluir arquivo origem
+       fs.unlink(`./etiquetas/${_docBytesRead[i]}`);
+       
+
  
      }
+    
   console.log(`${_docBytesRead.length} etiqueta geradas`)
 }
 // read()
